@@ -12,3 +12,4 @@ Rules
     5. At the end of each roll (assuming a 1 was not rolled), the player has the option to either keep rolling or hold.
     6. When a player holds, their current score is added to their total score and it becomes the other player's turn. 
     7. The first player to get a total score of 100 wins.
+    8. Each time a new game starts, the other player gets the first turn.
