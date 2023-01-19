@@ -28,6 +28,50 @@ let playerTotalScore; // holds the dom element for the total score element for t
 let currentName; // holds the dom element for the current player's name
 
 
+class player{
+
+  #currentScore = 0;
+  #totalScore = 0;
+  #nameElement;
+  #playerElement;
+  #currentScoreElement;
+  #totalScoreElement;
+
+  constructor(playerNum){
+    this.#nameElement = document.querySelector(`#name--${playerNum-1}`);
+    this.#playerElement = document.querySelector(`.player--${playerNum-1}`);
+    this.#currentScoreElement = document.querySelector(`#current--${playerNum-1}`);
+    this.#totalScoreElement = document.querySelector(`#score--${playerNum-1}`);
+
+  }
+
+  #changeStatus(){
+    this.#playerElement.classList.toggle("player--active");
+  }
+
+ 
+  #resetScore(){
+    this.#currentScore = 0;
+    this.#currentScoreElement.textContent = 0;
+  }
+
+  #addToCurrent(num){
+    this.#currentScore += num;
+    this.#currentScoreElement.textContent = this.#currentScore;
+  }
+
+  #addToTotal(){
+    this.#totalScore += this.#currentScore;
+    this.#totalScoreElement.textContent = this.#totalScore;
+    this.#resetScore();
+  }
+
+  #reset(){
+    
+  }
+
+}
+
 const switchPlayers = function () {
   player1.classList.toggle("player--active");
   player2.classList.toggle("player--active");
